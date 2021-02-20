@@ -8,6 +8,7 @@ protocols = dict()
 
 with suppress(ModuleNotFoundError):
     def get_file_bytes(key):
+        """Get byte contents given a filepath"""
         if key.startswith('file://'):
             key = key[len('file://'):]
         with open(key, 'rb') as fp:
@@ -24,6 +25,7 @@ with suppress(ModuleNotFoundError):
 
 
     def get_kaggle_data(key):
+        """Get the zip object of a kaggle dataset (downloaded if not cached locally)"""
         if key.startswith('kaggle://'):
             key = key[len('kaggle://'):]
         return kaggle_data[key]
@@ -40,6 +42,14 @@ with suppress(ModuleNotFoundError):
 
 
 def grab(key):
+    """Grab data from various protocols.
+
+    >>> grab.prototols # doctest: +SKIP
+    ['file', 'kaggle', 'http', 'https']
+    >>> b = grab('https://raw.githubusercontent.com/i2mint/pyckup/master/LICENSE')
+    >>> assert type(b) == bytes
+
+    """
     if '://' in key:
         m = protocol_sep_p.match(key)
         if m:
@@ -62,6 +72,7 @@ DFLT_USER_AGENT = "Wget/1.16 (linux-gnu)"
 def url_2_bytes(
         url, chk_size=1024, user_agent=DFLT_USER_AGENT
 ):
+    """get url content bytes"""
     def content_gen():
         req = urllib.request.Request(url)
         req.add_header("user-agent", user_agent)
