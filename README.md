@@ -18,11 +18,19 @@ So we made pyckup.
 
 We hope it helps.
 
+# install
+
+```
+pip install pyckup
+```
+
+Note: If you want to access kaggle datasets with pyckup, you'll need to get an account. 
+See [haggle](https://github.com/otosense/haggle#api-credentials) for more information.
 
 # Examples
 
 ```python
-from pyckup import grab, protocols
+from pyckup import grab
 ```
 
 See what protocols you have access to.
