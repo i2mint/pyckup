@@ -1,35 +1,42 @@
+"""
+Base
+"""
 from contextlib import suppress
 import re
-from py2store.misc import get_obj
+import os
+from dol.misc import get_obj
+from dol import Files
 
-protocol_sep_p = re.compile("(\w+)://(.+)")
+protocol_sep_p = re.compile('(\w+)://(.+)')
 
 protocols = dict()
 
-with suppress(ModuleNotFoundError):
-    def get_file_bytes(key):
-        """Get byte contents given a filepath"""
-        if key.startswith('file://'):
-            key = key[len('file://'):]
+
+def get_local_file_bytes_or_folder_mapping(key):
+    """Get byte contents given a filepath"""
+    if key.startswith('file://'):
+        key = key[len('file://') :]
+    if os.path.isdir(key):
+        return Files(key)
+    else:
         with open(key, 'rb') as fp:
-            contents = fp.read()
-        return contents
+            # In case you're wondering if this closes fp:
+            # https://stackoverflow.com/a/9885287/5758423
+            return fp.read()
 
 
-    protocols['file'] = get_file_bytes
+protocols['file'] = get_local_file_bytes_or_folder_mapping
 
 with suppress(ModuleNotFoundError):
     from haggle import KaggleDatasets
 
     kaggle_data = KaggleDatasets()
 
-
     def get_kaggle_data(key):
         """Get the zip object of a kaggle dataset (downloaded if not cached locally)"""
         if key.startswith('kaggle://'):
-            key = key[len('kaggle://'):]
+            key = key[len('kaggle://') :]
         return kaggle_data[key]
-
 
     protocols['kaggle'] = get_kaggle_data
 
@@ -56,7 +63,7 @@ def grab(key):
             protocol, ref = m.groups()
             protocol_func = protocols.get(protocol, None)
             if protocol_func is None:
-                raise KeyError(f"Unrecognized protocol: {protocol}")
+                raise KeyError(f'Unrecognized protocol: {protocol}')
             else:
                 return protocol_func(key)
     return get_obj(key)
@@ -66,16 +73,15 @@ grab.prototols = list(protocols)
 
 import urllib
 
-DFLT_USER_AGENT = "Wget/1.16 (linux-gnu)"
+DFLT_USER_AGENT = 'Wget/1.16 (linux-gnu)'
 
 
-def url_2_bytes(
-        url, chk_size=1024, user_agent=DFLT_USER_AGENT
-):
+def url_2_bytes(url, chk_size=1024, user_agent=DFLT_USER_AGENT):
     """get url content bytes"""
+
     def content_gen():
         req = urllib.request.Request(url)
-        req.add_header("user-agent", user_agent)
+        req.add_header('user-agent', user_agent)
         with urllib.request.urlopen(req) as response:
             while True:
                 chk = response.read(chk_size)
@@ -84,4 +90,4 @@ def url_2_bytes(
                 else:
                     break
 
-    return b"".join(content_gen())
+    return b''.join(content_gen())
