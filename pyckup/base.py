@@ -7,6 +7,7 @@ import os
 from dol.misc import get_obj
 from dol import Files
 
+ignore_if_module_not_found = suppress(ModuleNotFoundError, ImportError)
 protocol_sep_p = re.compile('(\w+)://(.+)')
 
 protocols = dict()
@@ -27,7 +28,7 @@ def get_local_file_bytes_or_folder_mapping(key):
 
 protocols['file'] = get_local_file_bytes_or_folder_mapping
 
-with suppress(ModuleNotFoundError):
+with ignore_if_module_not_found:
     from haggle import KaggleDatasets
 
     kaggle_data = KaggleDatasets()
@@ -40,7 +41,7 @@ with suppress(ModuleNotFoundError):
 
     protocols['kaggle'] = get_kaggle_data
 
-with suppress(ModuleNotFoundError):
+with ignore_if_module_not_found:
     from graze import Graze
 
     graze = Graze().__getitem__
@@ -57,6 +58,8 @@ def grab(key):
     >>> assert type(b) == bytes
 
     """
+    if key.startswith('/') or key.startswith('\\'):
+        key = 'file://' + key
     if '://' in key:
         m = protocol_sep_p.match(key)
         if m:
@@ -66,6 +69,7 @@ def grab(key):
                 raise KeyError(f'Unrecognized protocol: {protocol}')
             else:
                 return protocol_func(key)
+
     return get_obj(key)
 
 
