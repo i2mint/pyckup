@@ -8,7 +8,7 @@ from dol.misc import get_obj
 from dol import Files
 
 ignore_if_module_not_found = suppress(ModuleNotFoundError, ImportError)
-protocol_sep_p = re.compile('(\w+)://(.+)')
+protocol_sep_p = re.compile(r'(\w+)://(.+)')
 
 dflt_protocols = dict()
 
