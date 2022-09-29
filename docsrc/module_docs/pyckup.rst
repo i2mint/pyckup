@@ -1,0 +1,4 @@
+pyckup
+======
+.. automodule:: pyckup
+   :members:

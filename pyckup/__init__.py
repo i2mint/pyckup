@@ -70,5 +70,3 @@ data, but applies ``str.upper`` to the url, but you get the point.
 
 """
 from pyckup.base import grab, dflt_protocols
-
-
