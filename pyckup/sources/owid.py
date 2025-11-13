@@ -55,8 +55,8 @@ def slug_to_url_and_filename(slug, kind='json', rootdir=owid_downloads_dir_path)
 
 
 def acquire_owid_data(
-    slug: str, *, refresh: Optional[bool] = DFLT_REFRESH
-) -> List[Tuple[str, Optional[Path], Optional[Path]]]:
+    slug: str, *, refresh: bool | None = DFLT_REFRESH
+) -> list[tuple[str, Path | None, Path | None]]:
     """Download OWID CSV + JSON metadata for each chart slug.
 
     Returns list of tuples: (json_path_or_None, csv_path_or_None)
@@ -75,7 +75,7 @@ def acquire_owid_data(
 
     def _download_from_zip(
         slug: str, csv_path: Path, json_path: Path
-    ) -> Tuple[Optional[Path], Optional[Path]]:
+    ) -> tuple[Path | None, Path | None]:
         zip_url, tmp_zip_path = slug_to_url_and_filename(slug, kind='zip')
         tmp_zip_path = Path(tmp_zip_path)
 
@@ -191,7 +191,7 @@ def acquire_owid_data(
                 json_file_from_zip = None
 
     # ---- JSON metadata ----
-    json_file: Optional[Path] = None
+    json_file: Path | None = None
     if Path(json_path).exists() and not refresh:
         json_file = json_path
     else:
