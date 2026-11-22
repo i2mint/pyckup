@@ -109,16 +109,18 @@ data, but applies `str.upper` to the url, but you get the point.
 
 # Examples
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 ```
 
 See what (default) protocols you have access to.
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
-grab.procotols
+grab.dflt_protocols
 # ['file', 'kaggle', 'http', 'https']
 ```
 
@@ -128,6 +130,7 @@ Specifying a “file” protocol (i.e. prefixing your string with
 “file://” – followed by a full path) will give you the contents of the file
 in bytes.
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
@@ -143,6 +146,7 @@ In that case though, `grab` will try to give you the contents in a convenient ty
 This is convenient, but don’t depend on the type to strongly
 since it depends on what `py2store.misc` sets it to be.
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
@@ -160,6 +164,7 @@ print(grab('~/Dropbox/dev/p3/proj/i/pyckup/data/example.txt'))
 
 ## Grab the contents of a url
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
@@ -178,6 +183,7 @@ you’ll need to get an account.
 See [haggle](https://github.com/otosense/haggle#api-credentials)
 for more information.
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 

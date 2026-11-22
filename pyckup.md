@@ -1,4 +1,4 @@
-> built 2026-11-22 21:44 UTC from 939c2df (master) · pyckup 0.1.2. Details: build_info.json
+> built 2026-11-22 22:19 UTC from f3d1c90 (master) · pyckup 0.1.2. Details: build_info.json
 
 # index.html.md
 
@@ -113,16 +113,18 @@ data, but applies `str.upper` to the url, but you get the point.
 
 # Examples
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 ```
 
 See what (default) protocols you have access to.
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
-grab.procotols
+grab.dflt_protocols
 # ['file', 'kaggle', 'http', 'https']
 ```
 
@@ -132,6 +134,7 @@ Specifying a “file” protocol (i.e. prefixing your string with
 “file://” – followed by a full path) will give you the contents of the file
 in bytes.
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
@@ -147,6 +150,7 @@ In that case though, `grab` will try to give you the contents in a convenient ty
 This is convenient, but don’t depend on the type to strongly
 since it depends on what `py2store.misc` sets it to be.
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
@@ -164,6 +168,7 @@ print(grab('~/Dropbox/dev/p3/proj/i/pyckup/data/example.txt'))
 
 ## Grab the contents of a url
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
@@ -182,6 +187,7 @@ you’ll need to get an account.
 See [haggle](https://github.com/otosense/haggle#api-credentials)
 for more information.
 
+<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
@@ -460,7 +466,7 @@ Utils for pyckyp
 
 # About this build
 
-This documentation was built on **2026-11-22 21:44 UTC** from commit <a href="https://github.com/i2mint/pyckup/commit/939c2df202103bf4435da788255bc0257215f61e"><code>939c2df</code></a> on branch <code>master</code>, for **pyckup 0.1.2** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-22 22:19 UTC** from commit <a href="https://github.com/i2mint/pyckup/commit/f3d1c90cedcca906e0f6a301780e14711de7ac10"><code>f3d1c90</code></a> on branch <code>master</code>, for **pyckup 0.1.2** (from <code>pyproject.toml</code>).
 
 #### WARNING
 The documentation and the package may be misaligned:
@@ -471,7 +477,7 @@ The documentation and the package may be misaligned:
 
 |                     |                                                                                                                                                      |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/i2mint/pyckup/commit/939c2df202103bf4435da788255bc0257215f61e"><code>939c2df202103bf4435da788255bc0257215f61e</code></a> |
+| Commit              | <a href="https://github.com/i2mint/pyckup/commit/f3d1c90cedcca906e0f6a301780e14711de7ac10"><code>f3d1c90cedcca906e0f6a301780e14711de7ac10</code></a> |
 | Branch              | <code>master</code>                                                                                                                                  |
 | Tags at this commit | none                                                                                                                                                 |
 | Working tree        | clean                                                                                                                                                |
@@ -482,9 +488,9 @@ The documentation and the package may be misaligned:
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>i2mint/pyckup</code>                                                                 |
-| Run          | <a href="https://github.com/i2mint/pyckup/actions/runs/45073698818">45073698818</a>        |
+| Run          | <a href="https://github.com/i2mint/pyckup/actions/runs/45076935642">45076935642</a>        |
 | Ref          | <code>refs/heads/master</code>                                                             |
-| Event commit | <code>939c2df202103bf4435da788255bc0257215f61e</code> (in the history of the built commit) |
+| Event commit | <code>f3d1c90cedcca906e0f6a301780e14711de7ac10</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -515,7 +521,7 @@ Latest release: <a href="https://pypi.org/project/pyckup/0.1.3/">0.1.3</a>, newe
 
 ```bash
 git clone https://github.com/i2mint/pyckup && cd pyckup
-git checkout 939c2df202103bf4435da788255bc0257215f61e
+git checkout f3d1c90cedcca906e0f6a301780e14711de7ac10
 pip install "epythet==0.2.23"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```

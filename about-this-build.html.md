@@ -2,7 +2,7 @@
 
 # About this build
 
-This documentation was built on **2026-11-22 21:44 UTC** from commit <a href="https://github.com/i2mint/pyckup/commit/939c2df202103bf4435da788255bc0257215f61e"><code>939c2df</code></a> on branch <code>master</code>, for **pyckup 0.1.2** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-22 22:19 UTC** from commit <a href="https://github.com/i2mint/pyckup/commit/f3d1c90cedcca906e0f6a301780e14711de7ac10"><code>f3d1c90</code></a> on branch <code>master</code>, for **pyckup 0.1.2** (from <code>pyproject.toml</code>).
 
 #### WARNING
 The documentation and the package may be misaligned:
@@ -13,7 +13,7 @@ The documentation and the package may be misaligned:
 
 |                     |                                                                                                                                                      |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/i2mint/pyckup/commit/939c2df202103bf4435da788255bc0257215f61e"><code>939c2df202103bf4435da788255bc0257215f61e</code></a> |
+| Commit              | <a href="https://github.com/i2mint/pyckup/commit/f3d1c90cedcca906e0f6a301780e14711de7ac10"><code>f3d1c90cedcca906e0f6a301780e14711de7ac10</code></a> |
 | Branch              | <code>master</code>                                                                                                                                  |
 | Tags at this commit | none                                                                                                                                                 |
 | Working tree        | clean                                                                                                                                                |
@@ -24,9 +24,9 @@ The documentation and the package may be misaligned:
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>i2mint/pyckup</code>                                                                 |
-| Run          | <a href="https://github.com/i2mint/pyckup/actions/runs/45073698818">45073698818</a>        |
+| Run          | <a href="https://github.com/i2mint/pyckup/actions/runs/45076935642">45076935642</a>        |
 | Ref          | <code>refs/heads/master</code>                                                             |
-| Event commit | <code>939c2df202103bf4435da788255bc0257215f61e</code> (in the history of the built commit) |
+| Event commit | <code>f3d1c90cedcca906e0f6a301780e14711de7ac10</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -57,7 +57,7 @@ Latest release: <a href="https://pypi.org/project/pyckup/0.1.3/">0.1.3</a>, newe
 
 ```bash
 git clone https://github.com/i2mint/pyckup && cd pyckup
-git checkout 939c2df202103bf4435da788255bc0257215f61e
+git checkout f3d1c90cedcca906e0f6a301780e14711de7ac10
 pip install "epythet==0.2.23"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```

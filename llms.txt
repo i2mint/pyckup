@@ -12,7 +12,7 @@
 - [pyckup.sources](_autosummary/pyckup.sources.html.md): Data sources
 - [pyckup.sources.owid](_autosummary/pyckup.sources.owid.html.md): OWID data source.
 - [pyckup.util](_autosummary/pyckup.util.html.md): Utils for pyckyp
-- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 21:44 UTC&#42;&#42; from commit &lt;a href="https://github.com/i2m...
+- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 22:19 UTC&#42;&#42; from commit &lt;a href="https://github.com/i2m...
 
 ## Optional
 

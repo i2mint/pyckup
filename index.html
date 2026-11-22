@@ -196,13 +196,15 @@ data, but applies <code class="docutils literal notranslate"><span class="pre">s
 </section>
 <section id="examples">
 <h1>Examples<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#examples">¶</a></h1>
+
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="kn">from</span><span class="w"> </span><span class="nn">pyckup</span><span class="w"> </span><span class="kn">import</span> <span class="n">grab</span>
 </span></code></pre></div>
 </div>
 <p>See what (default) protocols you have access to.</p>
+
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="kn">from</span><span class="w"> </span><span class="nn">pyckup</span><span class="w"> </span><span class="kn">import</span> <span class="n">grab</span>
 </span><span id="line-2">
-</span><span id="line-3"><span class="n">grab</span><span class="o">.</span><span class="n">procotols</span>
+</span><span id="line-3"><span class="n">grab</span><span class="o">.</span><span class="n">dflt_protocols</span>
 </span><span id="line-4"><span class="c1"># ['file', 'kaggle', 'http', 'https']</span>
 </span></code></pre></div>
 </div>
@@ -211,6 +213,7 @@ data, but applies <code class="docutils literal notranslate"><span class="pre">s
 <p>Specifying a “file” protocol (i.e. prefixing your string with
 “file://” – followed by a full path) will give you the contents of the file
 in bytes.</p>
+
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="kn">from</span><span class="w"> </span><span class="nn">pyckup</span><span class="w"> </span><span class="kn">import</span> <span class="n">grab</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">b</span> <span class="o">=</span> <span class="n">grab</span><span class="p">(</span><span class="s1">'file:///Users/Thor.Whalen/Dropbox/dev/p3/proj/i/pyckup/pyckup/__init__.py'</span><span class="p">)</span>
@@ -224,6 +227,7 @@ In that case though, <code class="docutils literal notranslate"><span class="pre
 (e.g. a <code class="docutils literal notranslate"><span class="pre">dict</span></code> for <code class="docutils literal notranslate"><span class="pre">.json</span></code>, a python object of <code class="docutils literal notranslate"><span class="pre">.pickle</span></code>, string for <code class="docutils literal notranslate"><span class="pre">.txt</span></code>…).
 This is convenient, but don’t depend on the type to strongly
 since it depends on what <code class="docutils literal notranslate"><span class="pre">py2store.misc</span></code> sets it to be.</p>
+
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="kn">from</span><span class="w"> </span><span class="nn">pyckup</span><span class="w"> </span><span class="kn">import</span> <span class="n">grab</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">grab</span><span class="p">(</span><span class="s1">'/Users/Thor.Whalen/Dropbox/dev/p3/proj/i/pyckup/pyckup/__init__.py'</span><span class="p">)</span>
@@ -241,6 +245,7 @@ since it depends on what <code class="docutils literal notranslate"><span class=
 </section>
 <section id="grab-the-contents-of-a-url">
 <h2>Grab the contents of a url<a @click.prevent="window.navigator.clipboard.writeText($el.href); $el.setAttribute('data-tooltip', 'Copied!'); setTimeout(() =&gt; $el.setAttribute('data-tooltip', 'Copy link to this element'), 2000)" aria-label="Copy link to this element" class="headerlink" data-tooltip="Copy link to this element" href="#grab-the-contents-of-a-url" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#grab-the-contents-of-a-url'">¶</a></h2>
+
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="kn">from</span><span class="w"> </span><span class="nn">pyckup</span><span class="w"> </span><span class="kn">import</span> <span class="n">grab</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">b</span> <span class="o">=</span> <span class="n">grab</span><span class="p">(</span><span class="s1">'https://raw.githubusercontent.com/i2mint/pyckup/master/LICENSE'</span><span class="p">)</span>
@@ -258,6 +263,7 @@ since it depends on what <code class="docutils literal notranslate"><span class=
 you’ll need to get an account.
 See <a class="reference external" href="https://github.com/otosense/haggle#api-credentials" rel="nofollow noopener">haggle<svg fill="currentColor" height="1em" stroke="none" viewbox="0 96 960 960" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M188 868q-11-11-11-28t11-28l436-436H400q-17 0-28.5-11.5T360 336q0-17 11.5-28.5T400 296h320q17 0 28.5 11.5T760 336v320q0 17-11.5 28.5T720 696q-17 0-28.5-11.5T680 656V432L244 868q-11 11-28 11t-28-11Z"></path></svg></a>
 for more information.</p>
+
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="kn">from</span><span class="w"> </span><span class="nn">pyckup</span><span class="w"> </span><span class="kn">import</span> <span class="n">grab</span>
 </span><span id="line-2">
 </span><span id="line-3"><span class="n">z</span> <span class="o">=</span> <span class="n">grab</span><span class="p">(</span><span class="s1">'kaggle://drgilermo/face-images-with-marked-landmark-points'</span><span class="p">)</span>
@@ -271,7 +277,7 @@ for more information.</p>
 
 </section>
 </section>
-<p class="epythet-provenance" style="font-size:.8em;opacity:.65;margin-top:2.5em;text-align:right">built 2026-11-22 21:44 UTC from <a href="https://github.com/i2mint/pyckup/commit/939c2df202103bf4435da788255bc0257215f61e">939c2df</a> (master) · pyckup 0.1.2 · <a href="about-this-build.html">about this build</a></p>
+<p class="epythet-provenance" style="font-size:.8em;opacity:.65;margin-top:2.5em;text-align:right">built 2026-11-22 22:19 UTC from <a href="https://github.com/i2mint/pyckup/commit/f3d1c90cedcca906e0f6a301780e14711de7ac10">f3d1c90</a> (master) · pyckup 0.1.2 · <a href="about-this-build.html">about this build</a></p>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] h-full overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
