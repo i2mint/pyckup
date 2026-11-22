@@ -15,7 +15,6 @@ import json
 from pathlib import Path
 from typing import Optional, Tuple, List
 import zipfile
-from aix.util import model_info_dir
 
 # graze helpers
 from graze.base import url_to_file_download, return_filepath
@@ -31,6 +30,14 @@ owid_downloads_dir_path = str(owid_downloads_dir)
 
 
 def slug_to_url_and_filename(slug, kind='json', rootdir=owid_downloads_dir_path):
+    """The OWID url for a chart ``slug`` and the local path to store it at.
+
+    ``kind`` is one of 'json' (metadata), 'csv', 'zip' or 'html'.
+
+    >>> url, path = slug_to_url_and_filename('co2', 'csv', rootdir='/tmp')
+    >>> url
+    'https://ourworldindata.org/grapher/co2.csv'
+    """
 
     base = f"https://ourworldindata.org/grapher/{slug}"
 
