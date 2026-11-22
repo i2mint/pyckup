@@ -1,0 +1,15 @@
+﻿pyckup
+======
+
+.. automodule:: pyckup
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   base
+   sources
+   util

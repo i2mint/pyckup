@@ -1,0 +1,13 @@
+pyckup.sources.owid
+===================
+
+.. automodule:: pyckup.sources.owid
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      acquire_owid_data
+      slug_to_url_and_filename
+   

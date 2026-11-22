@@ -1,0 +1,16 @@
+# pyckup
+
+> Tools to provide easy access to prepared data to data scientists that can't be asked.
+
+
+## Pages in this subsection
+
+- [pyckup](pyckup.html.md): Grab data from various protocols.
+- [pyckup.base](pyckup.base.html.md): | &#96;get_local_file_bytes_or_folder_mapping&#96;(key)   | Get byte contents given a filepath   |
+- [pyckup.sources](pyckup.sources.html.md): Data sources
+- [pyckup.sources.owid](pyckup.sources.owid.html.md): OWID data source.
+- [pyckup.util](pyckup.util.html.md): Utils for pyckyp
+
+## Optional
+
+- [Top-level llms.txt](../llms.txt): Complete documentation index.

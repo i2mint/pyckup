@@ -1,0 +1,14 @@
+pyckup.base
+===========
+
+.. automodule:: pyckup.base
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      get_local_file_bytes_or_folder_mapping
+      grab
+      url_2_bytes
+   

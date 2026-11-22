@@ -1,0 +1,13 @@
+pyckup.sources
+==============
+
+.. automodule:: pyckup.sources
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   owid
