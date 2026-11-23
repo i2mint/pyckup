@@ -96,14 +96,12 @@ data, but applies ``str.upper`` to the url, but you get the point.
 
 # Examples
 
-<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 ```
 
 See what (default) protocols you have access to.
 
-<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
