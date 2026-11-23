@@ -29,7 +29,7 @@ Path(owid_downloads_dir).mkdir(parents=True, exist_ok=True)
 owid_downloads_dir_path = str(owid_downloads_dir)
 
 
-def slug_to_url_and_filename(slug, kind='json', rootdir=owid_downloads_dir_path):
+def slug_to_url_and_filename(slug, kind="json", rootdir=owid_downloads_dir_path):
     """The OWID url for a chart ``slug`` and the local path to store it at.
 
     ``kind`` is one of 'json' (metadata), 'csv', 'zip' or 'html'.
@@ -41,16 +41,16 @@ def slug_to_url_and_filename(slug, kind='json', rootdir=owid_downloads_dir_path)
 
     base = f"https://ourworldindata.org/grapher/{slug}"
 
-    if kind == 'json':
+    if kind == "json":
         url = f"{base}.metadata.json"
         path = os.path.join(rootdir, f"{slug}.metadata.json")
-    elif kind == 'csv':
+    elif kind == "csv":
         url = f"{base}.csv"
         path = os.path.join(rootdir, f"{slug}.csv")
-    elif kind == 'zip':
+    elif kind == "zip":
         url = f"{base}.zip"
         path = os.path.join(rootdir, f"{slug}.zip")
-    elif kind == 'html':
+    elif kind == "html":
         url = f"{base}"
         path = os.path.join(rootdir, f"{slug}.html")
     else:
@@ -83,7 +83,7 @@ def acquire_owid_data(
     def _download_from_zip(
         slug: str, csv_path: Path, json_path: Path
     ) -> tuple[Path | None, Path | None]:
-        zip_url, tmp_zip_path = slug_to_url_and_filename(slug, kind='zip')
+        zip_url, tmp_zip_path = slug_to_url_and_filename(slug, kind="zip")
         tmp_zip_path = Path(tmp_zip_path)
 
         # Avoid re-attempting ZIP if we already tried once
@@ -116,7 +116,7 @@ def acquire_owid_data(
 
         csv_ok, json_ok = None, None
         try:
-            with zipfile.ZipFile(zip_file_path, 'r') as zf:
+            with zipfile.ZipFile(zip_file_path, "r") as zf:
                 csv_member = f"{slug}.csv"
                 meta_member = f"{slug}.metadata.json"
 
@@ -150,8 +150,8 @@ def acquire_owid_data(
 
         return csv_ok, json_ok
 
-    json_url, json_path = slug_to_url_and_filename(slug, kind='json')
-    csv_url, csv_path = slug_to_url_and_filename(slug, kind='csv')
+    json_url, json_path = slug_to_url_and_filename(slug, kind="json")
+    csv_url, csv_path = slug_to_url_and_filename(slug, kind="csv")
 
     # ---- CSV ----
     csv_file = None

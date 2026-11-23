@@ -69,4 +69,5 @@ data, but applies ``str.upper`` to the url, but you get the point.
     'FOO://A_FAKE_URL'
 
 """
+
 from pyckup.base import grab, dflt_protocols
