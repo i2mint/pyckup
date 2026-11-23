@@ -1,4 +1,4 @@
-> built 2026-11-22 22:19 UTC from f3d1c90 (master) · pyckup 0.1.2. Details: build_info.json
+> built 2026-11-23 01:58 UTC from a5c8cfd (master) · pyckup 0.1.2. Details: build_info.json
 
 # index.html.md
 
@@ -113,14 +113,12 @@ data, but applies `str.upper` to the url, but you get the point.
 
 # Examples
 
-<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 ```
 
 See what (default) protocols you have access to.
 
-<!-- wads-docs: skip import prompts on stdin when the haggle directory is missing (pyckup#3) -->
 ```python
 from pyckup import grab
 
@@ -466,7 +464,7 @@ Utils for pyckyp
 
 # About this build
 
-This documentation was built on **2026-11-22 22:19 UTC** from commit <a href="https://github.com/i2mint/pyckup/commit/f3d1c90cedcca906e0f6a301780e14711de7ac10"><code>f3d1c90</code></a> on branch <code>master</code>, for **pyckup 0.1.2** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-23 01:58 UTC** from commit <a href="https://github.com/i2mint/pyckup/commit/a5c8cfd1035bce17826b23f9c403f0e7daaa296b"><code>a5c8cfd</code></a> on branch <code>master</code>, for **pyckup 0.1.2** (from <code>pyproject.toml</code>).
 
 #### WARNING
 The documentation and the package may be misaligned:
@@ -477,7 +475,7 @@ The documentation and the package may be misaligned:
 
 |                     |                                                                                                                                                      |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/i2mint/pyckup/commit/f3d1c90cedcca906e0f6a301780e14711de7ac10"><code>f3d1c90cedcca906e0f6a301780e14711de7ac10</code></a> |
+| Commit              | <a href="https://github.com/i2mint/pyckup/commit/a5c8cfd1035bce17826b23f9c403f0e7daaa296b"><code>a5c8cfd1035bce17826b23f9c403f0e7daaa296b</code></a> |
 | Branch              | <code>master</code>                                                                                                                                  |
 | Tags at this commit | none                                                                                                                                                 |
 | Working tree        | clean                                                                                                                                                |
@@ -488,9 +486,9 @@ The documentation and the package may be misaligned:
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>i2mint/pyckup</code>                                                                 |
-| Run          | <a href="https://github.com/i2mint/pyckup/actions/runs/45076935642">45076935642</a>        |
+| Run          | <a href="https://github.com/i2mint/pyckup/actions/runs/45097367758">45097367758</a>        |
 | Ref          | <code>refs/heads/master</code>                                                             |
-| Event commit | <code>f3d1c90cedcca906e0f6a301780e14711de7ac10</code> (in the history of the built commit) |
+| Event commit | <code>a5c8cfd1035bce17826b23f9c403f0e7daaa296b</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -521,7 +519,7 @@ Latest release: <a href="https://pypi.org/project/pyckup/0.1.3/">0.1.3</a>, newe
 
 ```bash
 git clone https://github.com/i2mint/pyckup && cd pyckup
-git checkout f3d1c90cedcca906e0f6a301780e14711de7ac10
+git checkout a5c8cfd1035bce17826b23f9c403f0e7daaa296b
 pip install "epythet==0.2.23"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```
